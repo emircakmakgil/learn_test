@@ -6,6 +6,8 @@ import io.github.emircakmakgil.learntest.dto.task.TaskListiningDto;
 import io.github.emircakmakgil.learntest.dto.task.UpdateTaskDto;
 import io.github.emircakmakgil.learntest.entity.Task;
 import io.github.emircakmakgil.learntest.service.TaskService;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -114,6 +116,17 @@ class TaskControllerTest {
         assertEquals("Test Task", captor.getValue().getTitle());
         assertEquals("This is a test task description.", captor.getValue().getDescription());
     }
+    @BeforeAll
+    static void setUpAll() {
+        System.out.println("Test süreci başlıyor. Ortam hazırlanıyor...");
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        System.out.println(" Tüm testler tamamlandı. Ortam kapatılıyor...");
+    }
+
+
 
 
 }
